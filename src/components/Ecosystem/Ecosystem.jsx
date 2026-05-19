@@ -21,11 +21,11 @@ const solutions = [
     desc: "Official Meta partner for automated communication in Public & Enterprise.",
     meta: ["Meta Partner", "WhatsApp API", "Automated Flows"]
   },
-  { 
-    icon: <FiCpu />, 
-    title: "AI Infra", 
-    desc: "On-premises AI Data Centres, research labs, and innovation hubs.",
-    meta: ["On-Premise", "Data Centers", "Innovation Labs"]
+  {
+    icon: <FiCpu />,
+    title: "CyberSecurity",
+    desc: "AI-powered threat interception and prevention for enterprise endpoints.",
+    meta: ["Enterprise Security", "Threat Detection", "SOC Integration"]
   },
   { 
     icon: <FiMap />, 

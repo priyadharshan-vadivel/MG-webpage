@@ -42,6 +42,7 @@ export default function Navbar() {
         { name: "Telecom", link: "telecom" },
         { name: "BFSI", link: "bfsi" },
         { name: "PropTech", link: "proptech" },
+        { name: "CyberSecurity", link: "cybersecurity" },
       ],
     },
   ];

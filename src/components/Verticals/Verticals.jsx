@@ -47,6 +47,11 @@ const sectors = [
     desc: "AI-driven automation, customer & broker experience, and digital transformation consulting.",
     tags: ["Habyatat", "QuantumTech", "Property Mavericks"],
   },
+  {
+    title: "CyberSecurity",
+    desc: "AI-powered threat interception and prevention for enterprise endpoints.",
+    tags: ["Enterprise Security", "Threat Detection", "SOC Integration"],
+  },
 ];
 
 const parent = {
