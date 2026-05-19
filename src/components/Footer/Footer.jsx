@@ -32,10 +32,10 @@ export default function Footer() {
       >
         <motion.div className="footBrand" variants={fadeUp}>
           <div className="footMark">
-            <img src={logo} alt="Metier Genesis Logo" className="footLogo" />
+            <img src={logo} alt="Metier Genesis FZC LLC Logo" className="footLogo" />
           </div>
           <div>
-            <div className="footTitle">Metier Genesis</div>
+            <div className="footTitle">Metier Genesis FZC LLC</div>
             <div className="footSub">
               Empowering Vision. Engineering Transformation. Scaling Excellence.
             </div>
@@ -67,7 +67,7 @@ export default function Footer() {
         transition={{ duration: 0.8, delay: 0.4 }}
       >
         <div className="footCopyright">
-          © 2026 Metier Genesis | Head Office → UAE • Innovation Center → India
+          © 2026 Metier Genesis FZC LLC | Head Office → UAE • Innovation Center → India
         </div>
         <div className="footMini">UAE • Canada • India • South Africa</div>
       </motion.div>

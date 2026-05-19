@@ -45,7 +45,7 @@ export default function About() {
           </h2>
 
           <p className="aboutText">
-            Metier Genesis Global is a premier strategic consultancy and
+            Metier Genesis FZC LLC is a premier strategic consultancy and
             technology integrator. We bridge ambitious leadership with
             operational execution, delivering agile and measurable growth.
           </p>

@@ -7,7 +7,7 @@ export default function Chatbot() {
   const [messages, setMessages] = useState([
     {
       type: "bot",
-      text: "Hi! I'm the Metier Genesis AI Assistant. I can answer questions based on the Website Requirements Document (WRD). How can I help you today?",
+      text: "Hi! I'm the Metier Genesis FZC LLC AI Assistant. I can answer questions based on the Website Requirements Document (WRD). How can I help you today?",
       suggestions: [
         "What is the website objective?",
         "Show website sections (sitemap)",
@@ -35,7 +35,7 @@ export default function Chatbot() {
         id: "objective",
         keywords: ["objective", "goal", "purpose", "why", "aim"],
         answer:
-          "Objective: Position Metier Genesis Global as a globally credible, enterprise-focused organization. Showcase leadership, service offerings, in-house solutions, technology expertise, and international footprint through a modern, intuitive, scalable platform.",
+          "Objective: Position Metier Genesis FZC LLC as a globally credible, enterprise-focused organization. Showcase leadership, service offerings, in-house solutions, technology expertise, and international footprint through a modern, intuitive, scalable platform.",
         suggestions: ["Design direction?", "Website sections (architecture)?", "Deliverables?"],
       },
       {
@@ -199,7 +199,7 @@ export default function Chatbot() {
               <FiZap className="zap-icon" />
             </div>
             <div className="chat-title">
-              <b>Metier Genesis Assistant</b>
+              <b>Metier Genesis FZC LLC Assistant</b>
               <span>Online • Ready to help</span>
             </div>
           </div>

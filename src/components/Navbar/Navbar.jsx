@@ -52,7 +52,7 @@ export default function Navbar() {
         {/* Logo */}
         <div className="nav-left">
           <a href="/">
-            <img src={logo} alt="Metier Genesis" className="nav-logo-large" />
+            <img src={logo} alt="Metier Genesis FZC LLC" className="nav-logo-large" />
           </a>
         </div>
 
