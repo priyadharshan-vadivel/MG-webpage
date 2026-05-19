@@ -1,0 +1,266 @@
+/* Section & Background */
+.verticalsSection {
+  position: relative;
+  overflow: hidden;
+  padding: 100px 0;
+  background: linear-gradient(180deg, #060b1a 0%, #050711 55%, #03040a 100%);
+  color: rgba(245, 247, 255, 0.92);
+}
+
+.verticalsContainer {
+  position: relative;
+  z-index: 2;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 24px;
+}
+
+/* Header Styles */
+.verticalsHeader {
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-bottom: 56px;
+}
+
+.verticalsKicker {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 8px 16px;
+  border-radius: 50px;
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  font-size: 13px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  color: #93c5fd;
+  margin-bottom: 20px;
+}
+
+.verticalsDot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: #60a5fa;
+  box-shadow: 0 0 10px #60a5fa;
+}
+
+.verticalsH2 {
+  font-size: clamp(32px, 4vw, 48px);
+  font-weight: 800;
+  letter-spacing: -0.02em;
+  margin: 0 0 16px 0;
+  color: #f8fafc;
+}
+
+.verticalsH2Grad {
+  background: linear-gradient(135deg, #60a5fa, #c084fc, #f472b6);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.verticalsLead {
+  font-size: 16px;
+  color: #94a3b8;
+  max-width: 600px;
+  line-height: 1.6;
+  margin: 0;
+}
+
+/* Background Effects */
+.verticalsBg {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  pointer-events: none;
+}
+
+.verticalsGlow {
+  position: absolute;
+  width: 800px;
+  height: 800px;
+  border-radius: 50%;
+  filter: blur(100px);
+  opacity: 0.15;
+  mix-blend-mode: screen;
+  animation: vertFloat 16s ease-in-out infinite;
+}
+
+.verticalsGlow.g1 {
+  left: -200px;
+  top: -200px;
+  background: radial-gradient(circle, rgba(59, 130, 246, 0.4), transparent 60%);
+  animation-duration: 15s;
+}
+
+.verticalsGlow.g2 {
+  right: -200px;
+  top: 100px;
+  background: radial-gradient(circle, rgba(139, 92, 246, 0.3), transparent 60%);
+  animation-duration: 18s;
+  animation-delay: -4s;
+}
+
+.verticalsGlow.g3 {
+  left: 20%;
+  bottom: -300px;
+  background: radial-gradient(circle, rgba(236, 72, 153, 0.2), transparent 60%);
+  animation-duration: 20s;
+  animation-delay: -8s;
+}
+
+@keyframes vertFloat {
+  0% { transform: translate(0, 0) scale(1); }
+  50% { transform: translate(20px, -20px) scale(1.05); }
+  100% { transform: translate(0, 0) scale(1); }
+}
+
+.verticalsNoise {
+  position: absolute;
+  inset: 0;
+  opacity: 0.06;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='260' height='260'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.8' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='260' height='260' filter='url(%23n)' opacity='.22'/%3E%3C/svg%3E");
+  background-size: 260px 260px;
+}
+
+/* Responsive Auto-Grid */
+.vertGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+  gap: 24px;
+}
+
+/* Premium Cards */
+.vertCard {
+  position: relative;
+  overflow: hidden;
+  border-radius: 20px;
+  padding: 32px 24px;
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  transition: transform 0.3s cubic-bezier(0.25, 0.8, 0.25, 1), 
+              background 0.3s ease, 
+              border-color 0.3s ease, 
+              box-shadow 0.3s ease;
+}
+
+/* Subtle gradient pseudo-element for hover glow */
+.vertCard::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: 20px;
+  background: radial-gradient(800px circle at var(--mouse-x, 50%) var(--mouse-y, -20%), rgba(255, 255, 255, 0.06), transparent 40%);
+  opacity: 0;
+  transition: opacity 0.4s ease;
+  pointer-events: none;
+}
+
+.vertCardContent {
+  position: relative;
+  z-index: 2;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+
+.vertTitle {
+  font-size: 20px;
+  font-weight: 700;
+  color: #f8fafc;
+  margin: 0 0 12px 0;
+  letter-spacing: -0.01em;
+}
+
+.vertDesc {
+  font-size: 14.5px;
+  color: #94a3b8;
+  line-height: 1.6;
+  margin: 0 0 24px 0;
+  flex-grow: 1; /* Pushes tags to the bottom */
+}
+
+/* Pill Tags */
+.vertTags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-top: auto;
+}
+
+.vertTag {
+  font-size: 11px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  padding: 6px 12px;
+  border-radius: 50px;
+  background: rgba(59, 130, 246, 0.1);
+  color: #93c5fd;
+  border: 1px solid rgba(59, 130, 246, 0.2);
+  transition: all 0.3s ease;
+}
+
+/* Hover States */
+.vertCard:hover {
+  transform: translateY(-6px);
+  background: rgba(255, 255, 255, 0.05);
+  border-color: rgba(255, 255, 255, 0.15);
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4), 0 0 20px rgba(59, 130, 246, 0.1);
+}
+
+.vertCard:hover::before {
+  opacity: 1;
+}
+
+.vertCard:hover .vertTag {
+  background: rgba(59, 130, 246, 0.15);
+  border-color: rgba(59, 130, 246, 0.3);
+  color: #bfdbfe;
+}
+
+/* Animated Shine Sweep */
+.vertCardShine {
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 50%;
+  height: 100%;
+  background: linear-gradient(to right, transparent, rgba(255, 255, 255, 0.05), transparent);
+  transform: skewX(-20deg);
+  transition: 0s;
+}
+
+.vertCard:hover .vertCardShine {
+  animation: sweep 1.2s ease-in-out;
+}
+
+@keyframes sweep {
+  0% { left: -100%; }
+  100% { left: 200%; }
+}
+
+/* Mobile Adjustments */
+@media (max-width: 768px) {
+  .verticalsSection { padding: 72px 0; }
+  .vertGrid { grid-template-columns: 1fr; }
+  .vertCard { padding: 24px; }
+  .vertTitle { font-size: 18px; }
+}
+
+/* Accessibility */
+@media (prefers-reduced-motion: reduce) {
+  .verticalsGlow { animation: none; }
+  .vertCard, .vertCardShine, .vertTag { transition: none; }
+  .vertCard:hover .vertCardShine { animation: none; }
+}

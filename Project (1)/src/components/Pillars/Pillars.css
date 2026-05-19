@@ -1,0 +1,198 @@
+.pillarsSection {
+  position: relative;
+  padding: 120px 0;
+  background: #030712; /* Deep modern dark theme */
+  color: #ffffff;
+  overflow: hidden;
+}
+
+.pillarsContainer {
+  position: relative;
+  z-index: 5;
+}
+
+/* Background Effects */
+.pillarsBg {
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  pointer-events: none;
+}
+
+.pillarsGlow {
+  position: absolute;
+  width: 600px;
+  height: 600px;
+  filter: blur(120px);
+  opacity: 0.15;
+}
+
+.pillarsGlow.g1 {
+  top: 10%;
+  left: -5%;
+  background: radial-gradient(circle, #3b82f6, transparent);
+}
+
+.pillarsGlow.g2 {
+  bottom: 5%;
+  right: -5%;
+  background: radial-gradient(circle, #8b5cf6, transparent);
+}
+
+/* Header Section */
+.pillarsHeader {
+  margin-bottom: 60px;
+}
+
+.pillarsKicker {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  padding: 8px 16px;
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 50px;
+  font-size: 13px;
+  font-weight: 800;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  color: #94a3b8;
+}
+
+.pillarsDot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: #3b82f6;
+  box-shadow: 0 0 10px #3b82f6;
+}
+
+.pillarsH2 {
+  font-size: clamp(34px, 5vw, 56px);
+  font-weight: 950;
+  line-height: 1.1;
+  letter-spacing: -0.03em;
+  margin: 24px 0;
+}
+
+.pillarsH2Grad {
+  background: linear-gradient(135deg, #60a5fa, #c084fc);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+/* Grid Alignment */
+.pillarsGrid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
+}
+
+/* Card Styling */
+.pillarCard {
+  position: relative;
+  background: rgba(255, 255, 255, 0.02);
+  border-radius: 32px;
+  transition: transform 0.4s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.pillarCardInner {
+  position: relative;
+  z-index: 2;
+  height: 100%;
+  padding: 40px;
+  background: #0a0f1d; /* Solid color for glass depth */
+  border: 1px solid rgba(255, 255, 255, 0.06);
+  border-radius: 31px;
+  display: flex;
+  flex-direction: column; /* This is key for alignment */
+}
+
+.pillarCard:hover {
+  transform: translateY(-12px);
+}
+
+.pillarIconWrap {
+  width: 56px;
+  height: 56px;
+  background: rgba(59, 130, 246, 0.1);
+  color: #3b82f6;
+  border-radius: 14px;
+  display: grid;
+  place-items: center;
+  font-size: 24px;
+  margin-bottom: 24px;
+  border: 1px solid rgba(59, 130, 246, 0.2);
+}
+
+.pillarTitle {
+  font-size: 24px;
+  font-weight: 800;
+  color: #f8fafc;
+  margin-bottom: 16px;
+}
+
+.pillarDesc {
+  font-size: 16px;
+  line-height: 1.7;
+  color: #94a3b8;
+  margin-bottom: 32px;
+  flex-grow: 1; /* Pushes the footer to the bottom */
+}
+
+/* Footer / Button Alignment */
+.pillarFooter {
+  margin-top: auto; /* Ensures all buttons are aligned horizontally */
+}
+
+.pillarActionBtn {
+  background: transparent;
+  border: none;
+  color: #ffffff;
+  font-weight: 700;
+  font-size: 15px;
+  cursor: pointer;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.pillarBtnLine {
+  height: 2px;
+  width: 24px;
+  background: #3b82f6;
+  transition: width 0.3s ease;
+}
+
+.pillarCard:hover .pillarBtnLine {
+  width: 100%;
+}
+
+/* Border Glow on Hover */
+.pillarBorderGlow {
+  position: absolute;
+  inset: -1px;
+  border-radius: 32px;
+  background: linear-gradient(135deg, #3b82f6, transparent, #8b5cf6);
+  z-index: 1;
+  opacity: 0;
+  transition: opacity 0.4s ease;
+}
+
+.pillarCard:hover .pillarBorderGlow {
+  opacity: 0.5;
+}
+
+/* Mobile Responsiveness */
+@media (max-width: 1100px) {
+  .pillarsGrid { grid-template-columns: repeat(2, 1fr); }
+}
+
+@media (max-width: 768px) {
+  .pillarsSection { padding: 80px 0; }
+  .pillarsGrid { grid-template-columns: 1fr; }
+  .pillarCardInner { padding: 32px; }
+  .pillarsH2 { font-size: 32px; }
+}

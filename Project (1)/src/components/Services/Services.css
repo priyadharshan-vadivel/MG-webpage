@@ -1,0 +1,239 @@
+.svcSection {
+  position: relative;
+  padding: 120px 0;
+  background: #030712; /* Deep modern dark */
+  color: #ffffff;
+  overflow: hidden;
+}
+
+.svcContainer {
+  position: relative;
+  z-index: 5;
+}
+
+/* Background Elements */
+.svcBg {
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+}
+
+.svcGlow {
+  position: absolute;
+  width: 600px;
+  height: 600px;
+  filter: blur(120px);
+  opacity: 0.15;
+}
+
+.svcGlow.g1 {
+  top: 10%;
+  left: -100px;
+  background: radial-gradient(circle, #3b82f6, transparent);
+}
+
+.svcGlow.g2 {
+  bottom: 10%;
+  right: -100px;
+  background: radial-gradient(circle, #ec4899, transparent);
+}
+
+.svcLines {
+  position: absolute;
+  inset: 0;
+  background-image: radial-gradient(rgba(255,255,255,0.05) 1px, transparent 1px);
+  background-size: 40px 40px;
+  mask-image: linear-gradient(to bottom, transparent, black 20%, black 80%, transparent);
+}
+
+/* Header */
+.svcHeader {
+  margin-bottom: 60px;
+}
+
+.svcKicker {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  padding: 8px 16px;
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 50px;
+  font-size: 13px;
+  font-weight: 800;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  color: #94a3b8;
+}
+
+.svcDot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: #3b82f6;
+  box-shadow: 0 0 10px #3b82f6;
+}
+
+.svcH2 {
+  font-size: clamp(34px, 5vw, 56px);
+  font-weight: 900;
+  line-height: 1.1;
+  letter-spacing: -0.03em;
+  margin: 24px 0;
+}
+
+.svcH2Grad {
+  background: linear-gradient(135deg, #60a5fa, #c084fc);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+.svcLead {
+  font-size: 18px;
+  color: #94a3b8;
+  max-width: 600px;
+  line-height: 1.6;
+}
+
+/* Grid */
+.svcGrid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
+}
+
+/* Premium Card Design */
+.svcCard {
+  position: relative;
+  background: rgba(255, 255, 255, 0.03);
+  border-radius: 28px;
+  padding: 1px; /* For the border effect */
+  transition: transform 0.4s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.svcCardInner {
+  background: #0a0f1d;
+  padding: 40px;
+  border-radius: 27px;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  z-index: 2;
+  border: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.svcCardTop {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 24px;
+}
+
+.svcCardTag {
+  font-size: 11px;
+  font-weight: 900;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  padding: 6px 12px;
+  background: rgba(96, 165, 250, 0.1);
+  color: #60a5fa;
+  border-radius: 6px;
+}
+
+.svcArrow {
+  color: #334155;
+  font-size: 20px;
+  transition: all 0.3s ease;
+}
+
+.svcTitle {
+  font-size: 22px;
+  font-weight: 800;
+  margin-bottom: 24px;
+  color: #f8fafc;
+}
+
+/* List Items */
+.svcList {
+  list-style: none;
+  padding: 0;
+  margin: 0 0 40px 0;
+  flex-grow: 1;
+}
+
+.svcList li {
+  display: flex;
+  gap: 12px;
+  margin-bottom: 16px;
+  color: #94a3b8;
+  font-size: 15px;
+  font-weight: 500;
+  line-height: 1.5;
+}
+
+.svcCheck {
+  color: #3b82f6;
+  font-size: 18px;
+  margin-top: 2px;
+  flex-shrink: 0;
+}
+
+/* Hover Effects */
+.svcCard:hover {
+  transform: translateY(-10px);
+}
+
+.svcCard:hover .svcArrow {
+  color: #ffffff;
+  transform: translate(2px, -2px);
+}
+
+.svcCardBorder {
+  position: absolute;
+  inset: 0;
+  border-radius: 28px;
+  background: linear-gradient(135deg, #3b82f6, transparent, #ec4899);
+  opacity: 0;
+  transition: opacity 0.4s ease;
+  z-index: 1;
+}
+
+.svcCard:hover .svcCardBorder {
+  opacity: 0.5;
+}
+
+/* Footer of Card */
+.svcFooter {
+  margin-top: auto;
+}
+
+.svcFooterText {
+  font-size: 12px;
+  font-weight: 700;
+  color: #475569;
+  text-transform: uppercase;
+  margin-bottom: 8px;
+}
+
+.svcFooterLine {
+  height: 2px;
+  width: 30px;
+  background: #3b82f6;
+  transition: width 0.4s ease;
+}
+
+.svcCard:hover .svcFooterLine {
+  width: 100%;
+}
+
+@media (max-width: 1100px) {
+  .svcGrid { grid-template-columns: repeat(2, 1fr); }
+}
+
+@media (max-width: 768px) {
+  .svcSection { padding: 80px 0; }
+  .svcGrid { grid-template-columns: 1fr; }
+  .svcCardInner { padding: 30px; }
+}

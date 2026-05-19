@@ -1,0 +1,316 @@
+/* =========================================
+   SECTION & BACKGROUND
+   ========================================= */
+.logosSection {
+  position: relative;
+  overflow: hidden;
+  background-color: #050814;
+  background-image: radial-gradient(circle at 50% 50%, rgba(30, 58, 138, 0.15), transparent 70%);
+  color: #ffffff;
+  min-height: 900px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 60px 0;
+}
+
+.logosBg {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  pointer-events: none;
+  overflow: hidden;
+}
+
+.logosGlow {
+  position: absolute;
+  width: 600px;
+  height: 600px;
+  border-radius: 50%;
+  filter: blur(100px);
+  opacity: 0.4;
+  mix-blend-mode: screen;
+}
+
+.logosGlow.g1 {
+  top: -100px;
+  left: -200px;
+  background: radial-gradient(circle, rgba(59, 130, 246, 0.2), transparent 70%);
+}
+
+.logosGlow.g2 {
+  bottom: -100px;
+  right: -100px;
+  background: radial-gradient(circle, rgba(139, 92, 246, 0.15), transparent 70%);
+}
+
+/* =========================================
+   SOLAR SYSTEM CONTAINERS
+   ========================================= */
+.solarSystemContainer {
+  position: relative;
+  width: 100%;
+  height: 1000px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 2;
+}
+
+.solarSystemScale {
+  position: relative;
+  width: 1000px;
+  height: 1000px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: transform 0.3s ease;
+}
+
+/* =========================================
+   CENTER CIRCLE
+   ========================================= */
+.solarCenter {
+  position: absolute;
+  inset: 0;
+  margin: auto;
+  width: 380px;
+  height: 380px;
+  background: rgba(15, 23, 42, 0.65);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 50%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 40px;
+  box-shadow: 0 0 60px rgba(59, 130, 246, 0.15), inset 0 0 30px rgba(139, 92, 246, 0.1);
+  z-index: 10;
+}
+
+.logosKicker {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 8px 16px;
+  border-radius: 50px;
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  font-size: 13px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  color: #93c5fd;
+  margin-bottom: 20px;
+}
+
+.logosDot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: #60a5fa;
+  box-shadow: 0 0 10px #60a5fa;
+}
+
+.logosH2 {
+  font-size: 32px;
+  font-weight: 800;
+  letter-spacing: -0.02em;
+  margin: 0 0 16px 0;
+  color: #f8fafc;
+  line-height: 1.2;
+}
+
+.logosP {
+  font-size: 15px;
+  color: #94a3b8;
+  line-height: 1.6;
+  margin: 0;
+}
+
+/* =========================================
+   ORBITS & LOGOS
+   ========================================= */
+.orbitRing {
+  position: absolute;
+  inset: 0;
+  margin: auto;
+  border: 1px dashed rgba(255, 255, 255, 0.15);
+  border-radius: 50%;
+  pointer-events: none;
+}
+
+.orbitItemWrapper {
+  position: absolute;
+  transform: translate(-50%, -50%);
+  pointer-events: auto;
+}
+
+.orbitLogoBox {
+  width: 130px;
+  height: 130px;
+  border-radius: 50%;
+  background: #ffffff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 8px;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.35), 0 0 15px rgba(59, 130, 246, 0.1);
+  cursor: pointer;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.logoImg {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  display: block;
+  transition: transform 0.3s ease;
+}
+
+.logoFallback {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 100%;
+  font-size: 12px;
+  font-weight: 800;
+  text-align: center;
+  color: #0f172a;
+}
+
+.orbitLogoBox:hover {
+  transform: scale(1.06);
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.4), 0 0 22px rgba(96, 165, 250, 0.25);
+}
+
+.orbitLogoBox:hover .logoImg {
+  transform: scale(1.08);
+}
+
+/* =========================================
+   PHYSICS: ROTATION & COUNTER-ROTATION
+   ========================================= */
+.spin-normal {
+  animation: spin 45s linear infinite;
+}
+
+.spin-normal .orbitLogoBox {
+  animation: counterSpin 45s linear infinite;
+}
+
+.spin-reverse {
+  animation: counterSpin 65s linear infinite;
+}
+
+.spin-reverse .orbitLogoBox {
+  animation: spin 65s linear infinite;
+}
+
+.spin-slow {
+  animation: spin 85s linear infinite;
+}
+
+.spin-slow .orbitLogoBox {
+  animation: counterSpin 85s linear infinite;
+}
+
+.solarSystemScale:hover .orbitRing,
+.solarSystemScale:hover .orbitLogoBox {
+  animation-play-state: paused;
+}
+
+@keyframes spin {
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes counterSpin {
+  100% {
+    transform: rotate(-360deg);
+  }
+}
+
+/* =========================================
+   RESPONSIVE SCALING
+   ========================================= */
+@media (max-width: 1200px) {
+  .solarSystemScale {
+    transform: scale(0.8);
+  }
+
+  .logosSection {
+    min-height: 800px;
+  }
+}
+
+@media (max-width: 900px) {
+  .solarSystemScale {
+    transform: scale(0.65);
+  }
+
+  .logosSection {
+    min-height: 700px;
+  }
+
+  .orbitLogoBox {
+    width: 120px;
+    height: 120px;
+    padding: 8px;
+  }
+}
+
+@media (max-width: 600px) {
+  .solarSystemScale {
+    transform: scale(0.45);
+  }
+
+  .logosSection {
+    min-height: 500px;
+  }
+
+  .solarCenter {
+    padding: 30px;
+  }
+
+  .orbitLogoBox {
+    width: 110px;
+    height: 110px;
+    padding: 6px;
+  }
+}
+
+@media (max-width: 400px) {
+  .solarSystemScale {
+    transform: scale(0.35);
+  }
+
+  .logosSection {
+    min-height: 400px;
+  }
+
+  .orbitLogoBox {
+    width: 100px;
+    height: 100px;
+    padding: 6px;
+  }
+}
+
+/* =========================================
+   ACCESSIBILITY
+   ========================================= */
+@media (prefers-reduced-motion: reduce) {
+  .logosGlow,
+  .orbitRing,
+  .orbitLogoBox,
+  .logoImg,
+  .solarSystemScale {
+    animation: none !important;
+    transition: none !important;
+  }
+}
