@@ -14,9 +14,8 @@ const leaders = [
   { name: "Gavin Wilcox", role: "Director South Africa", image: "P16.png" },
   { name: "Nur A", role: "Director West Africa", image: "P13.png" },
   { name: "Jacob Kurian", role: "Consultant", image: "P14.png" },
-  { name: "Naved M", role: "Director Outreach", image: "P5.png" },
-  { name: "Priyadharshan Vadivel", role: "Growth Partner", image: "Priyan.png" },
-  { name: "Jejo J", role: "Growth Partner", image: "jejo.png" },
+  { name: "Priyadharshan Vadivel", role: "Growth Partner", image: "P17.png" },
+  { name: "Jejo J", role: "Growth Partner", image: "P18.png" },
 ];
 
 const wrap = {
